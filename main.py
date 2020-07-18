@@ -57,6 +57,6 @@ def format_time(seconds:int) -> str:
     minutes %= 60
     return res.format(hours, minutes, seconds)        
 
-if __name__ == '__main__:
+if __name__ == '__main__':
     for login in logins:
         main(login)
