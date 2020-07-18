@@ -8,7 +8,7 @@ def download_song(folder:str, url:str, log_file:list):
         return
 
     soup = BS(requests.get(url).text, 'lxml')
-    song_name = ''.join(soup.find('h1', class_='text-center').text.split()[2:-2])
+    song_name = ' '.join(soup.find('h1', class_='text-center').text.split()[2:-2])
     file_name = normalize_to_filename(song_name)
     song_url = ('https://downloadmusicvk.ru' +
             soup.find('a', {'id':'download-audio'}).get('href'))
